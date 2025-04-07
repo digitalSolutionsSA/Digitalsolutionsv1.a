@@ -25,63 +25,48 @@ function App() {
   return (
     <div className="min-h-screen bg-[#111111] text-white">
       {/*   {/* Navigation */}
-      <nav
-        className={`relative w-full z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/90 backdrop-blur-lg border-b border-white/10'
-            : 'bg-white/90 backdrop-blur-lg border-b border-white/10'
-        }`}
-      >
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <img
-            src="/logo.png"
-            alt="Digital Solutions"
-            className="h-20 w-auto"
-          />
-          <div className="flex items-center gap-8">
-            <a
-              href="#services"
-              className="text-lg text-green-500 hover:text-[#36C1D3] transition-colors"
-            >
-              Services
-            </a>
-            <a
-              href="#why-us"
-              className="text-lg text-green-500 hover:text-[#36C1D3] transition-colors"
-            >
-              Why Us
-            </a>
-            <a
-              href="#contact"
-              className="text-lg text-green-500 hover:text-[#36C1D3] transition-colors"
-            >
-              Contact
-            </a>
-            <a
-              href="https://wa.me/27639034514"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#36C1D3] text-white px-4 py-2 rounded-full text-xl hover:bg-[#84C44C] transition-colors"
-            >
-              Get Started
-            </a>
-          </div>
-        </div>
-      </nav>
-      <div className="h-2 bg-green-500/50 blur-lg animate-[pulseGreenShadow_2s_ease-in-out_infinite]"></div>
-      <style jsx>{`
-  @keyframes pulseGreenShadow {
+<nav className={`relative w-full z-50 transition-all duration-300 hidden md:block ${ isScrolled ? 'bg-white/90 backdrop-blur-lg border-b border-white/10' : 'bg-white/90 backdrop-blur-lg border-b border-white/10' }`} >
+  <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+    <img src="/logo.png" alt="Digital Solutions" className="h-20 w-auto" />
+    <div className="flex items-center gap-8">
+      <a href="#services" className="text-lg text-green-500 hover:text-[#36C1D3] transition-colors" >
+        Services
+      </a>
+      <a href="#why-us" className="text-lg text-green-500 hover:text-[#36C1D3] transition-colors" >
+        Why Us
+      </a>
+      <a href="#contact" className="text-lg text-green-500 hover:text-[#36C1D3] transition-colors" >
+        Contact
+      </a>
+      <a href="https://wa.me/27639034514" target="_blank" rel="noopener noreferrer" className="bg-[#36C1D3] text-white px-4 py-2 rounded-full text-xl hover:bg-[#84C44C] transition-colors" >
+        Get Started
+      </a>
+    </div>
+  </div>
+</nav>
+<div className="h-1 bg-green-700 blur-sm animate-[neonEffect_2s_ease-in-out_infinite] md:block hidden"></div>
+<style jsx>{`
+  @keyframes neonEffect {
     0% {
+      transform: translateX(-100%);
       box-shadow: 0 0 10px rgba(52, 199, 89, 0.5);
     }
     50% {
+      transform: translateX(0);
       box-shadow: 0 0 10px rgba(54, 193, 211, 0.5);
     }
     100% {
+      transform: translateX(100%);
       box-shadow: 0 0 10px rgba(52, 199, 89, 0.5);
     }
   }
+  @media (max-width: 768px) {
+    nav, .h-1 {
+      display: none;
+    }
+  }
 `}</style>
+``
       {/* Hero Section */}
       <section className="pt-32 pb-20">
         <div className="container mx-auto px-6">
